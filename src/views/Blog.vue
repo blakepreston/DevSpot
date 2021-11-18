@@ -51,4 +51,10 @@ export default {
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.164) 0px 5px 5px;
 }
+
+@media screen and (max-width: 1000px) {
+    .blogCards{
+        width: 80vw;
+    }
+}
 </style>

@@ -80,4 +80,14 @@ code{
   border-radius: 5px;
   transition-duration: .5s;
 }
+
+@media screen and (max-width: 1000px) {
+  .image{
+    width: 70vw;
+  }
+
+  .p2{
+    width: 70vw;
+  }
+}
 </style>

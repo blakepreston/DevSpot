@@ -45,4 +45,10 @@ img{
   border-radius: 5px;
   transition-duration: .5s;
 }
+
+@media screen and (max-width: 1000px) {
+    img{
+      width: 80vw;
+    }
+}
 </style>
