@@ -10,8 +10,8 @@
     
     <div class="socialMedia">
       <a href="https://www.youtube.com/channel/UCU2av3FTxXGEnJYPnrjv9Uw" target="_blank"><img src="../assets/youtube.png" alt=""></a>
-      <a href="" target="_blank"><img src="../assets/twitter.png" alt=""></a>
-      <a href="" target="_blank"><img src="../assets/instagram.png" alt=""></a>
+      <a href="https://twitter.com/devspot_blog" target="_blank"><img src="../assets/twitter.png" alt=""></a>
+      <!-- <a href="" target="_blank"><img src="../assets/instagram.png" alt=""></a> -->
     </div>
 
   </div>

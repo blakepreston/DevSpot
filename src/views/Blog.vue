@@ -6,6 +6,12 @@
         <img class="image" id="image" v-bind:src="blogPost.BlogPosts[index].image1" alt="">
       </div>
   </div>
+
+  <div class="socialMedia">
+      <a href="https://www.youtube.com/channel/UCU2av3FTxXGEnJYPnrjv9Uw" target="_blank"><img src="../assets/youtube.png" alt=""></a>
+      <a href="https://twitter.com/devspot_blog" target="_blank"><img src="../assets/twitter.png" alt=""></a>
+      <!-- <a href="" target="_blank"><img src="../assets/instagram.png" alt=""></a> -->
+    </div>
 </template>
 
 <script>
@@ -50,6 +56,20 @@ export default {
     width: 90%;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.164) 0px 5px 5px;
+}
+
+.socialMedia img{
+  width: 50px;
+  border-radius: 0;
+  margin: 15px;
+  transition-duration: .5s;
+  cursor: pointer;
+}
+
+.socialMedia img:hover{
+  background-color: rgb(150, 150, 150);
+  border-radius: 5px;
+  transition-duration: .5s;
 }
 
 @media screen and (max-width: 1000px) {
