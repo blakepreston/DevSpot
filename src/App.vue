@@ -4,7 +4,8 @@
     <img src="./assets/DevSpotLogo.png" alt="">
     <router-link class="navElement" to="/">Home</router-link> |
     <!-- <router-link class="navElement" to="/about">About</router-link> | -->
-    <router-link class="navElement" to="/blog">Blog</router-link>
+    <router-link class="navElement" to="/blog">Blog</router-link> |
+    <router-link class="navElement" to="/publish">Publish</router-link>
   </div>
   <router-view/>
 </template>
@@ -18,9 +19,6 @@
   /* color: #2c3e50; */
 }
 
-body {
- font-family: 'Cardo', serif;
-}
 
 h1, h2, h3, h4, h5, h6, p {
  font-family: 'Oswald', sans-serif;
