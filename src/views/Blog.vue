@@ -1,11 +1,19 @@
 <template>
     <h2>Blog</h2>
-  <div class="blogContainer">
+  <!-- <div class="blogContainer">
       <div class="blogCards" v-for="(items, index) in blogPost.BlogPosts" v-bind:key="items" @click="RedirectBlog(index)">
         <p>{{blogPost.BlogPosts[index].paragraph1}}</p>
         <img class="image" id="image" v-bind:src="blogPost.BlogPosts[index].image1" alt="">
       </div>
-  </div>
+  </div> -->
+
+    <div class="blogContainer">
+       <div class="blogCards" v-for="{id, paragraph1,image1} in posts" :key="id" @click="RedirectBlog(id)">
+            <p>{{paragraph1}}</p>
+            <img class="image" id="image" v-bind:src="image1" alt="">
+        </div> 
+    </div>
+    
 
   <div class="socialMedia">
       <a href="https://www.youtube.com/channel/UCU2av3FTxXGEnJYPnrjv9Uw" target="_blank"><img src="../assets/youtube.png" alt=""></a>
@@ -15,6 +23,7 @@
 </template>
 
 <script>
+import {useLoadPosts} from '../firebase.js'
 import blogPostData from "/blogData.json"
 export default {
     data(){
@@ -23,10 +32,16 @@ export default {
         }
     },
     methods:{
-        RedirectBlog(index){
-            console.log(this.blogPost.BlogPosts[index].id)
-            this.$router.push({name: 'BlogPage',  params: {id:this.blogPost.BlogPosts[index].id}})
+        RedirectBlog(id){
+            //console.log(this.blogPost.BlogPosts[id].id)
+            console.log(this.posts[id].id);
+            this.$router.push({name: 'BlogPage',  params: {id:this.posts[id].id}})
         }
+    },
+    setup(){
+        const posts = useLoadPosts()
+        console.log(posts)
+        return {posts}
     }
 }
 </script>

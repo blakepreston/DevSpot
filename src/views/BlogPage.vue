@@ -1,22 +1,26 @@
 <template>
   <div class="blogPostContainer">
-    
-    <h1>{{blogPost.BlogPosts[this.$route.params.id - 1].paragraph1}}</h1>
-    <img class="image" id="image" v-bind:src="blogPost.BlogPosts[this.$route.params.id - 1].image1" alt="">
-    <p class="p2">{{blogPost.BlogPosts[this.$route.params.id - 1].paragraph2}}</p>
-    <p class="p2">{{blogPost.BlogPosts[this.$route.params.id - 1].paragraph3}}</p>
-    <img class="image" id="image" v-bind:src="blogPost.BlogPosts[this.$route.params.id - 1].image2" alt="">
-    <a v-bind:href="url1" target="_blank">{{blogPost.BlogPosts[this.$route.params.id - 1].url1}}</a>
-    <p class="p2">{{blogPost.BlogPosts[this.$route.params.id - 1].paragraph4}}</p>
-    <img class="image" id="image" v-bind:src="blogPost.BlogPosts[this.$route.params.id - 1].image3" alt="">
-    <a v-bind:href="url2" target="_blank">{{blogPost.BlogPosts[this.$route.params.id - 1].url2}}</a>
-    <p class="p2">{{blogPost.BlogPosts[this.$route.params.id - 1].paragraph5}}</p>
-    <img class="image" id="image" v-bind:src="blogPost.BlogPosts[this.$route.params.id - 1].image4" alt="">
-    <code v-if="blogPost.BlogPosts[this.$route.params.id - 1].code1">{{blogPost.BlogPosts[this.$route.params.id - 1].code1}}</code>
-    <p class="p2">{{blogPost.BlogPosts[this.$route.params.id - 1].paragraph6}}</p>
-    <img class="image" id="image" v-bind:src="blogPost.BlogPosts[this.$route.params.id - 1].image5" alt="">
-    <code v-if="blogPost.BlogPosts[this.$route.params.id - 1].code2">{{blogPost.BlogPosts[this.$route.params.id - 1].code2}}</code>
-    <p class="p2">{{blogPost.BlogPosts[this.$route.params.id - 1].paragraph7}}</p>
+    <!-- <div v-for="{id, paragraph1,paragraph2,paragraph3,paragraph4,paragraph5,paragraph6,paragraph7,image1, image2,image3,image4,image5,code1,code2,url1,url2} in posts" :key="id"> -->
+    <div>
+      <h1>{{this.posts[this.$route.params.id].paragraph1}}</h1>
+      <img class="image" id="image" v-bind:src="this.posts[this.$route.params.id].image1" alt="">
+      <p class="p2">{{this.posts[this.$route.params.id].paragraph2}}</p>
+      <p class="p2">{{this.posts[this.$route.params.id].paragraph3}}</p>
+      <img class="image" id="image" v-bind:src="this.posts[this.$route.params.id].image2" alt="">
+      <!-- <a v-bind:href="posts[this.$route.params.id].url1" v-if="url1" target="_blank">{{this.posts[this.$route.params.id].url1}}</a> -->
+      <a target="_blank">{{this.posts[this.$route.params.id].url1}}</a>
+      <p class="p2">{{this.posts[this.$route.params.id].paragraph4}}</p>
+      <img class="image" id="image" v-bind:src="this.posts[this.$route.params.id].image3" alt="">
+      <!-- <a v-bind:href="posts[this.$route.params.id].url2" v-if="url2" target="_blank">{{this.posts[this.$route.params.id].url2}}</a> -->
+      <a target="_blank">{{this.posts[this.$route.params.id].url2}}</a>
+      <p class="p2">{{this.posts[this.$route.params.id].paragraph5}}</p>
+      <img class="image" id="image" v-bind:src="this.posts[this.$route.params.id].image4" alt="">
+      <code v-if="this.posts[this.$route.params.id].code1">{{this.posts[this.$route.params.id].code1}}</code>
+      <p class="p2">{{this.posts[this.$route.params.id].paragraph6}}</p>
+      <img class="image" id="image" v-bind:src="this.posts[this.$route.params.id].image5" alt="">
+      <code v-if="this.posts[this.$route.params.id].code2">{{this.posts[this.$route.params.id].code2}}</code>
+      <p class="p2">{{this.posts[this.$route.params.id].paragraph7}}</p>
+    </div>
   </div>
 
   <div class="socialMedia">
@@ -27,14 +31,18 @@
 </template>
 
 <script>
-import blogPostData from "/blogData.json"
+import {useLoadPosts} from '../firebase.js'
+
 export default {
     data(){
         return{
-            blogPost: blogPostData,
-            url1: blogPostData.BlogPosts[this.$route.params.id - 1].url1,
-            url2: blogPostData.BlogPosts[this.$route.params.id - 1].url2
+            
         }
+    },
+    setup(){
+        const posts = useLoadPosts()
+        console.log(posts)
+        return {posts}
     }
 }
 </script>

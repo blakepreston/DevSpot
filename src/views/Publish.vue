@@ -89,8 +89,27 @@
 
     <!-- <button @click="getData">Get Data</button> -->
 
-    <div v-for="{id, paragraph1} in posts" :key="id">
+    <div v-for="{id, paragraph1,paragraph2,paragraph3,paragraph4,paragraph5,paragraph6,paragraph7,image1, image2,image3,image4,image5,code1,code2,url1,url2} in posts" :key="id">
+        <!-- <p>{{id}}</p>
         <p>{{paragraph1}}</p>
+        <img class="image" id="image" v-bind:src="image1" alt="">
+        <img class="image" id="image" v-bind:src="image2" alt=""> -->
+        <h1>{{paragraph1}}</h1>
+        <img class="image" id="image" v-bind:src="image1" alt="">
+        <p class="p2">{{paragraph2}}</p>
+        <p class="p2">{{paragraph3}}</p>
+        <img class="image" id="image" v-bind:src="image2" alt="">
+        <a v-bind:href="url1" target="_blank">{{url1}}</a>
+        <p class="p2">{{paragraph4}}</p>
+        <img class="image" id="image" v-bind:src="image3" alt="">
+        <a v-bind:href="url2" target="_blank">{{url2}}</a>
+        <p class="p2">{{paragraph5}}</p>
+        <img class="image" id="image" v-bind:src="image4" alt="">
+        <code v-if="code1">{{code1}}</code>
+        <p class="p2">{{paragraph6}}</p>
+        <img class="image" id="image" v-bind:src="image5" alt="">
+        <code v-if="code2">{{code2}}</code>
+        <p class="p2">{{paragraph7}}</p>
     </div>
   </div>
 </template>
