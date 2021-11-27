@@ -4,8 +4,8 @@
     <img src="./assets/DevSpotLogo.png" alt="">
     <router-link class="navElement" to="/">Home</router-link> |
     <!-- <router-link class="navElement" to="/about">About</router-link> | -->
-    <router-link class="navElement" to="/blog">Blog</router-link> |
-    <router-link class="navElement" to="/publish">Publish</router-link>
+    <router-link class="navElement" to="/blog">Blog</router-link>
+    <!-- <router-link class="navElement" to="/publish">Publish</router-link> -->
   </div>
   <router-view/>
 </template>

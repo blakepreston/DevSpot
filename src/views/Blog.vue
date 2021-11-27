@@ -8,9 +8,10 @@
   </div> -->
 
     <div class="blogContainer">
-       <div class="blogCards" v-for="{id, paragraph1,image1} in posts" :key="id" @click="RedirectBlog(id)">
-            <p>{{paragraph1}}</p>
-            <img class="image" id="image" v-bind:src="image1" alt="">
+       <!-- <div class="blogCards" v-for="{id, paragraph1,image1} in posts" :key="id" @click="RedirectBlog(id)"> -->
+        <div class="blogCards" v-for="(items, index) in posts" v-bind:key="items" @click="RedirectBlog(index)">
+            <p>{{this.posts[index].paragraph1}}</p>
+            <img class="image" id="image" v-bind:src="this.posts[index].image1" alt="">
         </div> 
     </div>
     
@@ -32,10 +33,10 @@ export default {
         }
     },
     methods:{
-        RedirectBlog(id){
+        RedirectBlog(index){
             //console.log(this.blogPost.BlogPosts[id].id)
-            console.log(this.posts[id].id);
-            this.$router.push({name: 'BlogPage',  params: {id:this.posts[id].id}})
+            console.log(this.posts[index].id);
+            this.$router.push({name: 'BlogPage',  params: {id:this.posts[index].id}})
         }
     },
     setup(){

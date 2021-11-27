@@ -1,6 +1,11 @@
 <template>
   <div>
     <div class="publishElement">
+        <label for="Docid">Document ID</label>
+        <input name="Docid" type="text" v-model="documentID">
+    </div>
+
+    <div class="publishElement">
         <label for="id">ID</label>
         <input name="id" type="number" v-model="blogData.id">
     </div>
@@ -85,16 +90,16 @@
         <input name="p7" type="text" v-model="blogData.paragraph7">
     </div>
 
-    <button @click="publishJSON" type="submit">Publish</button>
+    <button class="publishButton" @click="publishJSONCustID" type="submit">Publish</button>
 
     <!-- <button @click="getData">Get Data</button> -->
 
-    <div v-for="{id, paragraph1,paragraph2,paragraph3,paragraph4,paragraph5,paragraph6,paragraph7,image1, image2,image3,image4,image5,code1,code2,url1,url2} in posts" :key="id">
+    <!-- <div v-for="{id, paragraph1,paragraph2,paragraph3,paragraph4,paragraph5,paragraph6,paragraph7,image1, image2,image3,image4,image5,code1,code2,url1,url2} in posts" :key="id"> -->
         <!-- <p>{{id}}</p>
         <p>{{paragraph1}}</p>
         <img class="image" id="image" v-bind:src="image1" alt="">
         <img class="image" id="image" v-bind:src="image2" alt=""> -->
-        <h1>{{paragraph1}}</h1>
+        <!-- <h1>{{paragraph1}}</h1>
         <img class="image" id="image" v-bind:src="image1" alt="">
         <p class="p2">{{paragraph2}}</p>
         <p class="p2">{{paragraph3}}</p>
@@ -110,12 +115,12 @@
         <img class="image" id="image" v-bind:src="image5" alt="">
         <code v-if="code2">{{code2}}</code>
         <p class="p2">{{paragraph7}}</p>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import {createPost, useLoadPosts} from '../firebase.js'
+import {createPost, createPostCustID, useLoadPosts} from '../firebase.js'
 export default {
     data(){
         return{
@@ -133,12 +138,17 @@ export default {
                 image3: '',
                 image4: '',
                 image5: ''
-            }
+            },
+            documentID: ''
         }
     },
     methods:{
         publishJSON(){
             createPost(this.blogData)
+        },
+        publishJSONCustID(){
+            createPostCustID(this.documentID, this.blogData)
+            alert("Post Published")
         }
         // ,
         // getData(){
@@ -161,6 +171,18 @@ export default {
     flex-direction: row;
     justify-content: center;
     margin: 10px;
+}
+
+.publishButton{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    cursor: pointer;
+    color: #03DAC6;
+    background-color: #121212;
+    border-radius: 15px;
+    border-collapse: #121212;
 }
 
 </style>

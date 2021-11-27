@@ -1,7 +1,8 @@
 <template>
   <div class="blogPostContainer">
-    <!-- <div v-for="{id, paragraph1,paragraph2,paragraph3,paragraph4,paragraph5,paragraph6,paragraph7,image1, image2,image3,image4,image5,code1,code2,url1,url2} in posts" :key="id"> -->
+    <!-- <div v-for="{id} in posts" :key="id"> -->
     <div>
+      <!-- paragraph1,paragraph2,paragraph3,paragraph4,paragraph5,paragraph6,paragraph7,image1, image2,image3,image4,image5,code1,code2,url1,url2 -->
       <h1>{{this.posts[this.$route.params.id].paragraph1}}</h1>
       <img class="image" id="image" v-bind:src="this.posts[this.$route.params.id].image1" alt="">
       <p class="p2">{{this.posts[this.$route.params.id].paragraph2}}</p>

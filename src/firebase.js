@@ -18,6 +18,12 @@ const postCollection = db.collection('posts')
 
 export const createPost = post =>{
     return postCollection.add(post)
+    //return postCollection.doc("6").set(post)
+}
+
+export function createPostCustID(custID, post){
+    ///return postCollection.add(post)
+    return postCollection.doc(custID).set(post)
 }
 
 export const getPost = async id => {
