@@ -6,12 +6,15 @@
       <h1>{{this.posts[this.$route.params.id].paragraph1}}</h1>
       <img class="image" id="image" v-bind:src="this.posts[this.$route.params.id].image1" alt="">
       <p class="p2">{{this.posts[this.$route.params.id].paragraph2}}</p>
+      <code v-if="this.posts[this.$route.params.id].code3">{{this.posts[this.$route.params.id].code3}}</code>
       <p class="p2">{{this.posts[this.$route.params.id].paragraph3}}</p>
       <img class="image" id="image" v-bind:src="this.posts[this.$route.params.id].image2" alt="">
+      <code v-if="this.posts[this.$route.params.id].code4">{{this.posts[this.$route.params.id].code4}}</code>
       <!-- <a v-bind:href="posts[this.$route.params.id].url1" v-if="url1" target="_blank">{{this.posts[this.$route.params.id].url1}}</a> -->
       <a target="_blank">{{this.posts[this.$route.params.id].url1}}</a>
       <p class="p2">{{this.posts[this.$route.params.id].paragraph4}}</p>
       <img class="image" id="image" v-bind:src="this.posts[this.$route.params.id].image3" alt="">
+      <code v-if="this.posts[this.$route.params.id].code5">{{this.posts[this.$route.params.id].code5}}</code>
       <!-- <a v-bind:href="posts[this.$route.params.id].url2" v-if="url2" target="_blank">{{this.posts[this.$route.params.id].url2}}</a> -->
       <a target="_blank">{{this.posts[this.$route.params.id].url2}}</a>
       <p class="p2">{{this.posts[this.$route.params.id].paragraph5}}</p>
@@ -21,6 +24,7 @@
       <img class="image" id="image" v-bind:src="this.posts[this.$route.params.id].image5" alt="">
       <code v-if="this.posts[this.$route.params.id].code2">{{this.posts[this.$route.params.id].code2}}</code>
       <p class="p2">{{this.posts[this.$route.params.id].paragraph7}}</p>
+      <code v-if="this.posts[this.$route.params.id].code6">{{this.posts[this.$route.params.id].code6}}</code>
     </div>
   </div>
 

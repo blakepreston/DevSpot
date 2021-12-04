@@ -11,18 +11,23 @@
     </div>
 
     <div class="publishElement">
-        <label for="p1">Paragraph1</label>
+        <label for="p1">Paragraph1-Title</label>
         <input name="p1" type="text" v-model="blogData.paragraph1">
     </div>
 
     <div class="publishElement">
-        <label for="image1">Image1</label>
+        <label for="image1">Image1-Header</label>
         <input name="image1" type="text" v-model="blogData.image1">
     </div>
 
     <div class="publishElement">
         <label for="p2">Paragraph2</label>
         <input name="p2" type="text" v-model="blogData.paragraph2">
+    </div>
+
+    <div class="publishElement">
+        <label for="code3">Code3</label>
+        <input name="code3" type="text" v-model="blogData.code3">
     </div>
 
     <div class="publishElement">
@@ -33,6 +38,11 @@
     <div class="publishElement">
         <label for="image2">Image2</label>
         <input name="image2" type="text" v-model="blogData.image2">
+    </div>
+
+    <div class="publishElement">
+        <label for="code4">Code4</label>
+        <input name="code4" type="text" v-model="blogData.code4">
     </div>
 
     <div class="publishElement">
@@ -48,6 +58,11 @@
     <div class="publishElement">
         <label for="image3">Image3</label>
         <input name="image3" type="text" v-model="blogData.image3">
+    </div>
+
+    <div class="publishElement">
+        <label for="code5">Code5</label>
+        <input name="code5" type="text" v-model="blogData.code5">
     </div>
 
     <div class="publishElement">
@@ -88,6 +103,11 @@
     <div class="publishElement">
         <label for="p7">Paragraph7</label>
         <input name="p7" type="text" v-model="blogData.paragraph7">
+    </div>
+
+    <div class="publishElement">
+        <label for="code6">Code6</label>
+        <input name="code6" type="text" v-model="blogData.code6">
     </div>
 
     <button class="publishButton" @click="publishJSONCustID" type="submit">Publish</button>
@@ -137,7 +157,13 @@ export default {
                 image2: '',
                 image3: '',
                 image4: '',
-                image5: ''
+                image5: '',
+                code1: '',
+                code2: '',
+                code3: '',
+                code4: '',
+                code5: '',
+                code6: ''
             },
             documentID: ''
         }
