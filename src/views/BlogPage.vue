@@ -104,8 +104,7 @@ code{
   border-radius: 15px;
   width: 50vw;
   margin-top: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
 }
 
 .image{
