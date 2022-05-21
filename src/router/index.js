@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import Blog from '../views/Blog.vue'
 import BlogPage from '../views/BlogPage.vue'
 import Publish from '../views/Publish.vue'
+import RangeFinder from '../views/RangeFinder.vue'
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
     path: '/publish',
     name: 'Publish',
     component: Publish
+  },
+  {
+    path: '/RangeFinder',
+    name: 'RangeFinder',
+    component: RangeFinder
   }
 ]
 
